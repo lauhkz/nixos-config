@@ -60,10 +60,11 @@ fonts = {
 
   environment = {
    systemPackages = with pkgs; [
-    git
     ripgrep
     vim 
     lm_sensors
+
+    jdk17
    ];
    variables = {
     EDITOR = "nvim";
@@ -77,6 +78,9 @@ fonts = {
   hardware.pulseaudio.enable = false;
 
   services = {
+    openssh = {
+     enable = true;
+    };
     pipewire = {
     enable = true;
     alsa.enable = true;

@@ -7,8 +7,8 @@
    enable = true;
 
     layout = "us";
-    xkbVariant = "";
-    xkbOptions = "ctrl:swapcaps";
+    xkbVariant = "dvp";
+    xkbOptions = "ctrl:swapcaps, grp:alt_shift_toggle";
 
    desktopManager = {
     xterm.enable = false;

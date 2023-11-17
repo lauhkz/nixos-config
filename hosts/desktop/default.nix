@@ -15,19 +15,20 @@
 
   # Bootloader.
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
      efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
+      efiSysMountPoint = "/boot";
       };
       grub = {
         enable = true;
         devices = ["nodev"];
         efiSupport = true;
         useOSProber = true;
+        configurationLimit = 2;
       };
     };
+    kernelPackages = pkgs.linuxPackages_latest;
   };
     
   networking.hostName = "desktop"; # Define your hostname.

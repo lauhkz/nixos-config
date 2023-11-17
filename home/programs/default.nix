@@ -4,9 +4,13 @@
   ...
 }: {
   imports = [
-    ./media.nix
+    ./bash.nix
     ./browser.nix
-    ./udiskie.nix
+    ./git.nix
+    ./kitty.nix
+    ./media.nix
     ./syncthing.nix
+    ./tmux.nix
+    ./udiskie.nix
   ];
 }
