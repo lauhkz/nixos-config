@@ -16,8 +16,10 @@
 
    displayManager = {
     defaultSession = "none+i3";
-    lightdm.enable = false;
-    gdm.enable = true;
+    sddm = {
+      enable = true;
+      theme = "${import ./sddm-theme.nix {inherit pkgs; }}";
+    };
    };
 
    windowManager = {

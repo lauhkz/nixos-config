@@ -7,6 +7,7 @@
    ./rofi
    ./nvim
    ./emacs
+   ./theme
   ];
 
   # TODO please change the username & home direcotry to your own

@@ -1,7 +1,7 @@
 { pkgs }:
 
 let
-  imgLink = "https://YOURIMAGELINK/image.png";
+  imgLink = "https://github.com/lautar0pp/Another-nixConf/blob/main/mountain-wallpaper.jpg";
 
   image = pkgs.fetchurl {
     url = imgLink;
@@ -20,7 +20,7 @@ pkgs.stdenv.mkDerivation {
     mkdir -p $out
     cp -R ./* $out/
     cd $out/
-    rm mountain-wallpaper.jpg
-    cp -r ${image} $out/mountain-wallpaper.jpg
+    rm Background.jpg
+    cp -r ${image} $out/Background.jpg
    '';
 }

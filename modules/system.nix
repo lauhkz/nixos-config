@@ -65,6 +65,9 @@ fonts = {
     lm_sensors
 
     jdk17
+
+    libsForQt5.qt5.qtquickcontrols2
+    libsForQt5.qt5.qtgraphicaleffects
    ];
    variables = {
     EDITOR = "nvim";
