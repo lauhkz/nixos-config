@@ -40,6 +40,7 @@
     btop  # replacement of htop/nmon
     slack
     gnome.file-roller
+    lazygit
     ranger
 
     # system tools

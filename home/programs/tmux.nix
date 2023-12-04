@@ -16,6 +16,13 @@
 
      bind -T copy-mode-vi v send-keys -X begin-selection
      bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+
+     # vim-like pane switching
+     bind -r ^ last-window
+     bind -r k select-pane -U
+     bind -r j select-pane -D
+     bind -r l select-pane -R
+     bind -r h select-pane -L
      '';
     };
   };

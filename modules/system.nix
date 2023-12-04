@@ -3,6 +3,7 @@
 {
   # Set your time zone.
   time.timeZone = "America/Argentina/Buenos_Aires";
+  time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -18,8 +19,10 @@
     LC_TELEPHONE = "es_AR.UTF-8";
     LC_TIME = "es_AR.UTF-8";
   };
-  
-fonts = {
+
+  console.useXkbConfig = true;
+
+  fonts = {
     packages = with pkgs; [
       # icon fonts
       material-design-icons
@@ -54,24 +57,29 @@ fonts = {
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
- 
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment = {
-   systemPackages = with pkgs; [
-    ripgrep
-    vim 
-    lm_sensors
+    systemPackages = with pkgs; [
+      ripgrep
+      vim 
+      lm_sensors
+      xorg.xprop
 
-    jdk17
+      jdk17
 
-    libsForQt5.qt5.qtquickcontrols2
-    libsForQt5.qt5.qtgraphicaleffects
-   ];
-   variables = {
-    EDITOR = "nvim";
-   };
+      libsForQt5.qt5.qtquickcontrols2
+      libsForQt5.qt5.qtgraphicaleffects
+
+      nodejs
+
+      google-chrome
+    ];
+    variables = {
+      EDITOR = "nvim";
+    };
   };
 
   security.rtkit.enable = true;
@@ -81,20 +89,43 @@ fonts = {
   hardware.pulseaudio.enable = false;
 
   services = {
+    xserver = {
+      enable = true;
+      layout = "us";
+      xkbVariant = "dvp";
+      xkbOptions = "ctrl:swapcaps";
+    };
     openssh = {
-     enable = true;
+      enable = true;
     };
     pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
   };
- };
 
   users.users.lauhkz = {
     isNormalUser = true;
     description = "lauhkz";
     extraGroups = [ "networkmanager" "wheel" ];
+  };
+
+  nix = {                                   # Nix Package Manager settings
+  settings ={
+    auto-optimise-store = true;           # Optimise syslinks
+  };
+  gc = {                                  # Automatic garbage collection
+  automatic = true;
+  dates = "weekly";
+  options = "--delete-older-than 2d";
+};
+package = pkgs.nixFlakes;    # Enable nixFlakes on system
+extraOptions = ''
+experimental-features = nix-command flakes
+keep-outputs          = true
+keep-derivations      = true
+'';
   };
 }

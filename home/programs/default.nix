@@ -6,6 +6,7 @@
   imports = [
     ./bash.nix
     ./browser.nix
+    ./flameshot.nix
     ./git.nix
     ./kitty.nix
     ./media.nix

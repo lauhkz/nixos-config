@@ -36,23 +36,5 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
- 
-  nix = {                                   # Nix Package Manager settings
-    settings ={
-      auto-optimise-store = true;           # Optimise syslinks
-    };
-    gc = {                                  # Automatic garbage collection
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 2d";
-    };
-    package = pkgs.nixFlakes;    # Enable nixFlakes on system
-    extraOptions = ''
-      experimental-features = nix-command flakes
-      keep-outputs          = true
-      keep-derivations      = true
-    '';
-  };
-
   system.stateVersion = "23.05"; # Did you read the comment?
 }
