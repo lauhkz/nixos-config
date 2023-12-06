@@ -6,6 +6,13 @@
   xserver = {
    enable = true;
 
+<<<<<<< HEAD
+=======
+    layout = "us";
+    xkbVariant = "dvp";
+    xkbOptions = "ctrl:swapcaps";
+
+>>>>>>> 035d989 (setting alacritty for thinkpad and firefox)
    desktopManager = {
     xterm.enable = false;
    };
