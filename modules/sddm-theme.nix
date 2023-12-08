@@ -5,7 +5,7 @@ let
 
   image = pkgs.fetchurl {
     url = imgLink;
-    sha256 = "sha256-3Cynb/SnDphjTTFeyXx9ItPeIJspsL1AdgB7Y1FP0V8=";
+    sha256 = "sha256-2Q70cgVAc2SmBU1jUowz2P6+oOpDgcYL/oFiZZcE7OM=";
   };
 in
 pkgs.stdenv.mkDerivation {
@@ -14,7 +14,7 @@ pkgs.stdenv.mkDerivation {
     owner = "MarianArlt";
     repo = "sddm-sugar-dark";
     rev = "ceb2c455663429be03ba62d9f898c571650ef7fe";
-    sha256 = "0153z1kylbhc9d12nxy9vpn0spxgrhgy36wy37pk6ysq7akaqlvy";
+    sha256 = "sha256-miITP56s39f8/0kS10ofnxGj9/ds6MHxHEp5qhhJ8xQ=";
   };
   installPhase = ''
     mkdir -p $out

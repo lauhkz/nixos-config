@@ -27,7 +27,7 @@
     vars = {
       user = "lauhkz";
       location = "$HOME/nixos-config";
-      terminal = "kitty";
+      terminal = "alacritty";
       editor = "nvim";
     };
   in

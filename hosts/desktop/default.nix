@@ -16,23 +16,9 @@
   # Bootloader.
   boot = {
     loader = {
-<<<<<<< HEAD
-     efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
-      };
-      grub = {
-        enable = true;
-        devices = ["nodev"];
-        efiSupport = true;
-        useOSProber = true;
-        configurationLimit = 2;
-=======
       grub = {
         enable = true; 
-        version = 2; 
         device = "/dev/sda"; 
->>>>>>> 035d989 (setting alacritty for thinkpad and firefox)
       };
       timeout = 1;
     };

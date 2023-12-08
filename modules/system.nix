@@ -75,7 +75,6 @@
 
       nodejs
 
-      google-chrome
     ];
     variables = {
       EDITOR = "nvim";
@@ -91,10 +90,14 @@
 
   services = {
     xserver = {
+      xkb.extraLayouts.rdp = {
+        description = "Real programming dvorak";
+        languages = [ "eng" ];
+        symbolsFile = /home/lauhkz/nixos-config/modules/xkb/symbols/rdp;
+      };
       enable = true;
-      layout = "us";
-      xkbVariant = "dvp";
-      xkbOptions = "ctrl:swapcaps";
+      layout = "rdp, us";
+      xkbOptions = "ctrl:swapcaps, ";
     };
     openssh = {
       enable = true;

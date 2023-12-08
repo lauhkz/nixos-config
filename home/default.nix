@@ -9,12 +9,11 @@
    ./emacs
    ./theme
   ];
-<<<<<<< HEAD
-
-=======
   programs = {
-   bash = {
-    enable = true;
+  # Let home Manager install and manage itself.
+    home-manager.enable = true;
+    bash = {
+      enable = true;
     enableCompletion = true;
     shellAliases = {
      ns = "sudo nixos-rebuild switch --flake ~/nixos-config/.#desktop";
@@ -36,7 +35,6 @@
 #     };
 #    };
   };
->>>>>>> 035d989 (setting alacritty for thinkpad and firefox)
   # TODO please change the username & home direcotry to your own
   home = {
    username = "lauhkz";
@@ -56,11 +54,8 @@
     # utils
     ripgrep # recursively searches directories for a regex pattern
     fzf # A command-line fuzzy finder
-<<<<<<< HEAD
     feh
-=======
     xorg.xrandr
->>>>>>> 035d989 (setting alacritty for thinkpad and firefox)
 
     # misc
     feh
@@ -86,6 +81,4 @@
   stateVersion = "23.05";
   };
 
-  # Let home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
