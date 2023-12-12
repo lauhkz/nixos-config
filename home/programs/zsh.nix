@@ -14,12 +14,12 @@
         size = 10000;
       };
       shellAliases = {
-        ns = "sudo nixos-rebuild switch --flake .#desktop";
+        ns = "sudo nixos-rebuild switch --flake ~/nixos-config/.#desktop";
         hs = "home-manager switch --impure";
-        emacs  = "emacs -nw";
       };
       # Workaround for ZVM overwriting keybinds
       initExtra = ''
+      bindkey '^f' autosuggest-accept
       zvm_after_init_commands+=("bindkey '^[[A' history-substring-search-up")
       zvm_after_init_commands+=("bindkey '^[OA' history-substring-search-up")
       zvm_after_init_commands+=("bindkey '^[[B' history-substring-search-down")

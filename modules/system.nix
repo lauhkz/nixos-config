@@ -61,7 +61,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Shell
+  programs.zsh.enable = true;
+
   environment = {
+    shells = with pkgs; [ zsh ];
     systemPackages = with pkgs; [
       ripgrep
       vim 
@@ -114,6 +118,7 @@
     isNormalUser = true;
     description = "lauhkz";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
 
   nix = {                                   # Nix Package Manager settings
