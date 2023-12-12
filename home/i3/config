@@ -190,6 +190,7 @@ bar {
         status_command i3status
 }
 
+for_window [class="emacs"] move to workspace $ws1
 for_window [class="firefox"] move to workspace $ws2
 for_window [class="Alacritty"] move to workspace $ws3
 for_window [class="Slack"] move to workspace $ws9

@@ -4,6 +4,14 @@
   ...
 }: {
   programs = {
+
+    chromium = {
+      enable = true;
+      extensions = [
+       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # Ublock Origin
+      ];
+    };
+
     firefox = {
       enable = true;
       profiles.lauhkz = {
@@ -12,11 +20,18 @@
         settings = {
           "ui.key.accelKef" = 91;                 # Rebind ctrl to super (would interfere with tridactyl otherwise)
 
+          # Remove the alt menu
+          "ui.key.menuAccessKeyFocuses" = false;
+
+          # Remove the fullscreen pop up
+          "full-screen-api.warning.timeout" = 0;
+
           # Keep the reader button enabled all times
           "reader.parse-on-load.force-enabled" = true;
 
           # Actual settings
           "app.update.auto" = false;
+          "browser.startup.homepage" = "https://www.theodinproject.com/dashboard | https://music.youtube.com/playlist?list=RDTMAK5uy_l3TXw3uC_sIHl4m6RMGqCyKKd2D2_pv28";
           "browser.bookmarks.restore_default_bookmarks" = false;
           "browser.contentblocking.category" = "strict";
           "browser.newtabpage.activity-stream.showSponsored" = false;
