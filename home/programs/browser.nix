@@ -49,6 +49,10 @@
         };
         bookmarks = [
           {
+            name = "Habitify";
+            toolbar = true;
+          }
+          {
             name = "Whatsapp";
             toolbar = true;
             bookmarks = [

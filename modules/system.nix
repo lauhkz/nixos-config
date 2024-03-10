@@ -1,6 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, neovim,  ... }:
 
 {
+
+nixpkgs.overlays = [
+    inputs.neovim.overlays.default
+];
+
   # Set your time zone.
   time.timeZone = "America/Argentina/Buenos_Aires";
   time.hardwareClockInLocalTime = true;
@@ -64,11 +69,12 @@
   # Shell
   programs.zsh.enable = true;
 
+
   environment = {
     shells = with pkgs; [ zsh ];
     systemPackages = with pkgs; [
       ripgrep
-      vim 
+      vim
       lm_sensors
       xorg.xprop
 
@@ -79,6 +85,7 @@
 
       nodejs
 
+      nvim-pkg
     ];
     variables = {
       EDITOR = "nvim";
@@ -94,15 +101,12 @@
 
   services = {
     xserver = {
-      xkb.extraLayouts.rdp = {
-        description = "Real programming dvorak";
-        languages = [ "eng" ];
-        symbolsFile = /home/lauhkz/nixos-config/modules/xkb/symbols/rdp;
-      };
       enable = true;
-      layout = "rdp, us";
-      xkbOptions = "ctrl:swapcaps, ";
+      xkb = {
+      layout = "us";
+      options  = "ctrl:swapcaps, ";
     };
+  };
     openssh = {
       enable = true;
     };
@@ -112,7 +116,7 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-  };
+};
 
   users.users.lauhkz = {
     isNormalUser = true;
@@ -137,4 +141,7 @@ keep-outputs          = true
 keep-derivations      = true
 '';
   };
+nixpkgs.config.permittedInsecurePackages = [
+                "freeimage-unstable-2021-11-01"
+              ];
 }

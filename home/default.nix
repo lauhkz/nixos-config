@@ -1,19 +1,19 @@
-{ config, pkgs, ... }:
+{ config, pkgs, neovim, ... }:
 
 {
   imports = [
    ./i3
    ./programs
    ./rofi
-   ./nvim
    ./emacs
    ./theme
   ];
-  programs = {
+
+ programs = {
   # Let home Manager install and manage itself.
     home-manager.enable = true;
     bash = {
-      enable = true;
+    enable = true;
     enableCompletion = true;
     shellAliases = {
      ns = "sudo nixos-rebuild switch --flake ~/nixos-config/.#desktop";
@@ -24,17 +24,7 @@
     userName = "lautar0pp";
     userEmail = "lautaro_RL@outlook.com";
    };
-#   kitty = {
-#     enable = true;
-#     settings = {
-#      background_opacity = "0.8";
-#      #dynamic_background_opacity = "yes";
-#      enable_audio_bell = false;
-#      hide_window_decorations = "titlebar-only";
-#      window_padding_width = 5;
-#     };
-#    };
-  };
+ };
   # TODO please change the username & home direcotry to your own
   home = {
    username = "lauhkz";
@@ -43,7 +33,6 @@
     alacritty
     neofetch
     discord
-    obs-studio
 
     # archives
     zip
@@ -53,6 +42,7 @@
 
     # utils
     ripgrep # recursively searches directories for a regex pattern
+    fd
     fzf # A command-line fuzzy finder
     feh
     xorg.xrandr
@@ -66,7 +56,6 @@
 
     # productivity
     btop  # replacement of htop/nmon
-    slack
     gnome.file-roller
     lazygit
     ranger

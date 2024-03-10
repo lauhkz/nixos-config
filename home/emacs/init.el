@@ -284,27 +284,27 @@
 
   (setq org-capture-templates
 	'(("t" "Tasks / Projects")
-	  ("tt" "Task" entry (file+olp "~/sync/org/agenda.org" "Inbox")
+	  ("tt" "Task" entry (file+olp "~/sync/2.Areas/Org/agenda.org" "Inbox")
 	   "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)
 
 	  ("j" "Journal Entries")
 	  ("jj" "Journal" entry
-	   (file+olp+datetree "~/sync/org/journal.org")
+	   (file+olp+datetree "~/sync/2.Areas/Org/journal.org")
 	   "\n* %<%I:%M %p> - Journal :journal:\n\n%?\n\n"
 	   :clock-in :clock-resume
 	   :empty-lines 1)
 	  ("jm" "Meeting" entry
-	   (file+olp+datetree "/sync/org/journal.org")
+	   (file+olp+datetree "/sync/2.Areas/Org/journal.org")
 	   "* %<I:%M %p> - %a :meetings:\n\n%?\n\n"
 	   :clock-in :clock-resume
 	   :empty-lines 1)
 
 	  ("w" "Workflows")
-	  ("we" "Checking Email" entry (file+olp+datetree "~/sync/org/journal.org")
+	  ("we" "Checking Email" entry (file+olp+datetree "~/sync/2.Areas/Org/journal.org")
 	   "* Cheking Email :email:\n\n%?" :clock-in :clock-resume :empty-lines 1)
 
 	  ("m" "Metrics Capture")
-	  ("mx" "Weight" table-line (file+headline "~/sync/org/metrics.org" "Weight")
+	  ("mx" "Weight" table-line (file+headline "~/sync/2.Areas/Org/metrics.org" "Weight")
 	   "| %U | %^{Weight} | %^{Notes} |" :kill-buffer t)))
   
   (efs/org-font-setup))

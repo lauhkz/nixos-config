@@ -29,7 +29,7 @@
 	i3status
 	i3-gaps
 	picom
-    acpi
+        acpi
 	arandr
 	xbindkeys
 	sysstat

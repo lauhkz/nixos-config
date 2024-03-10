@@ -5,7 +5,7 @@
    git = {
     enable = true;
     userName = "lautar0pp";
-    userEmail = "32388725+lautar0pp@users.noreply.github.com";
+    userEmail = "lautaro_RL@outlook.com";
    };
   };
 }
