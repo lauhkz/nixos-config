@@ -3,12 +3,6 @@
 {
  environment.pathsToLink = [ "/libexec" ];
  services = {
-  xserver = {
-   enable = true;
-   desktopManager = {
-    xterm.enable = false;
-   };
-
    displayManager = {
     defaultSession = "none+i3";
     sddm = {
@@ -16,7 +10,11 @@
       #theme = "${import ./sddm-theme.nix {inherit pkgs; }}";
     };
    };
-
+  xserver = {
+   enable = true;
+   desktopManager = {
+    xterm.enable = false;
+   };
    windowManager = {
     i3 = {
      enable = true;
@@ -29,7 +27,7 @@
 	i3status
 	i3-gaps
 	picom
-        acpi
+    acpi
 	arandr
 	xbindkeys
 	sysstat

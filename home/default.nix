@@ -1,4 +1,4 @@
-{ config, pkgs, neovim, ... }:
+{ pkgs , ... }:
 
 {
   imports = [
@@ -6,7 +6,6 @@
    ./programs
    ./rofi
    ./emacs
-   ./theme
   ];
 
  programs = {
@@ -32,7 +31,6 @@
    packages = with pkgs; [
     alacritty
     neofetch
-    discord
 
     # archives
     zip
@@ -59,6 +57,7 @@
     gnome.file-roller
     lazygit
     ranger
+    keepassxc
 
     # system tools
     lm_sensors # for `sensors` command

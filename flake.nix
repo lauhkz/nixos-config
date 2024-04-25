@@ -11,18 +11,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-   
+
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
       flake = false;
     };
-    
+
     neovim = {
-     url = "github:lautar0pp/nvim";
+     url = "github:lautar0pp/nvim-flake";
     };
 
  };
-  outputs = { self, nixpkgs, home-manager, emacs-overlay, neovim, ... } @ inputs: let 
+  outputs = { self, nixpkgs, home-manager, emacs-overlay, neovim, ... } @ inputs: let
    inherit (self) outputs;
     vars = {
       user = "lauhkz";
@@ -41,9 +41,9 @@
 
         specialArgs = {inherit inputs outputs;};
         modules = [
-	 
+
           ./hosts/desktop/default.nix
-            
+
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
