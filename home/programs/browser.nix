@@ -14,7 +14,7 @@
 
     firefox = {
       enable = true;
-      profiles.lauhkz = {
+      profiles."lauhkz" = {
         isDefault = true;
         search.default = "DuckDuckGo";
         settings = {

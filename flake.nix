@@ -21,8 +21,11 @@
      url = "github:lautar0pp/nvim-flake";
     };
 
+    nurpkgs = {
+     url = "github:nix-community/NUR";
+    };
  };
-  outputs = { self, nixpkgs, home-manager, emacs-overlay, neovim, ... } @ inputs: let
+  outputs = { self, nixpkgs, home-manager, emacs-overlay, neovim, nurpkgs, ... } @ inputs: let
    inherit (self) outputs;
     vars = {
       user = "lauhkz";
