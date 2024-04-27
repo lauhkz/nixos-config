@@ -19,7 +19,6 @@
     i3 = {
      enable = true;
      extraPackages = with pkgs; [
-	rofi
 	dunst
 	i3blocks
 	i3lock-color

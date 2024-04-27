@@ -55,6 +55,8 @@
         };
     };
 
+    programs.adb.enable = true;
+
     programs.dconf.enable = true;
 
 # networking.firewall.allowedTCPPorts = [ ... ];
@@ -120,7 +122,7 @@
     users.users.lauhkz = {
         isNormalUser = true;
         description = "lauhkz";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "adbusers" ];
         shell = pkgs.zsh;
     };
 

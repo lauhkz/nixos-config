@@ -12,8 +12,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
+    doom-emacs = {
+      url = "github:doomemacs/doomemacs";
       flake = false;
     };
 

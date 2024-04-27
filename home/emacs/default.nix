@@ -1,18 +1,19 @@
 { pkgs, config, ... }:
 
 {
-  services.emacs.enable = true;
-
-  programs = {
-    emacs = {
-     enable = true;
-    };
-  };
-  home.file = {
-      ".config/doom" = {
-            source = ./doom;
-            recursive = true;
+  home = {
+      packages = with pkgs; [
+          emacs
+          coreutils
+          clang
+          fd
+      ];
+      file = {
+          ".config/doom" = {
+              source = ./doom;
+              recursive = true;
           };
+      };
   };
 
   #home.file = {
