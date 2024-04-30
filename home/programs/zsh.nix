@@ -20,6 +20,7 @@
       # Workaround for ZVM overwriting keybinds
       initExtra = ''
       bindkey '^f' autosuggest-accept
+      eval "$(fzf --zsh)"
       zvm_after_init_commands+=("bindkey '^[[A' history-substring-search-up")
       zvm_after_init_commands+=("bindkey '^[OA' history-substring-search-up")
       zvm_after_init_commands+=("bindkey '^[[B' history-substring-search-down")

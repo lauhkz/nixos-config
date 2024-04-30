@@ -4,7 +4,7 @@
      programs.rofi = {
         enable = true;
         terminal = "${pkgs.alacritty}/bin/alacritty";
-        theme = ./configs/rofidmenu.rasi;
+        theme = ./configs/themes/squared-nord.rasi;
      };
      home.file.".config/rofi" = {
          source = ./configs;

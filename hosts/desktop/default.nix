@@ -6,9 +6,9 @@
 
 {
   imports =
-    [ 
+    [
       ../../modules/system.nix
-      ../../modules/i3.nix
+      ../../modules/windowManager/i3.nix
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
@@ -17,8 +17,8 @@
   boot = {
     loader = {
       grub = {
-        enable = true; 
-        device = "/dev/sda"; 
+        enable = true;
+        device = "/dev/sda";
       };
       timeout = 1;
     };

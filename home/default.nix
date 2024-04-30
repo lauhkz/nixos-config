@@ -65,6 +65,8 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+    nicotine-plus
   ];
 
   stateVersion = "23.05";
