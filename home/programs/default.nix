@@ -12,7 +12,6 @@
     ./git.nix
     ./kitty.nix
     ./media.nix
-    ./syncthing.nix
     ./tmux.nix
     ./udiskie.nix
     ./zsh.nix
