@@ -93,6 +93,7 @@
         };
     };
 
+
     security.rtkit.enable = true;
 
 # Enable sound with pipewire.

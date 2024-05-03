@@ -183,9 +183,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+x exec ~/.config/i3/scripts/lock
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
         status_command i3status
 }
@@ -195,4 +192,6 @@ for_window [class="Emacs"] move to workspace $ws2
 for_window [class="Alacritty"] move to workspace $ws3
 for_window [class="Slack"] move to workspace $ws9
 
-bindsym $mod+Shift+period exec systemctl suspend
+exec --no-startup-id xautolock -corners -000 -time 10 -locker 'i3lock -c 000000' &
+bindsym $mod+Pause exec i3lock -c 000000 && systemctl suspend
+bindsym Pause exec i3lock -c 000000
