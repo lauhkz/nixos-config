@@ -20,7 +20,7 @@
             folders = {
                 "sync" = {
                     path = "/home/lauhkz/sync";
-                    devices = [ "desktop" "a50" "a22" ];
+                    devices = [ "desktop" "a50" "e22" ];
                 };
             };
         };
