@@ -9,11 +9,11 @@
         user = "lauhkz";
         group = "users";
         guiAddress = "0.0.0.0:8384";
-        declarative = {
-            overrideDevices = true;
-            overrideFolders = true;
+        overrideDevices = true;
+        overrideFolders = true;
+        settings = {
             devices = {
-                "desktop" = { id = "HTAXXHN-QLHB4JU-LUIS3ZH-ZHXLJCC-N2N7TPL-NARK7JH-ISYILIM-GJPTHQA"; };
+                "desktop" = { id = "RQV5WGI-GBAZ6MF-Q6BDE4G-XDLHZI7-YOXGJ5B-HFGGSYC-YD5ZGAR-DVM6KQG"; };
                 "a50" = { id = "F7NTN7G-TPQTHTL-4AT4LPE-L7Q07TV-5U3HSMA-4KXRUUH-2ZGRSP2-NQXWQAQ"; };
                 "e22" = { id = "OVGDYT2-Y4KPMNN-TRVWKMQ-DVLAIJM-SJLD72E-YI3ZK5Z-MGUZHGT-64VCAK"; };
             };
@@ -22,6 +22,10 @@
                     path = "/home/lauhkz/sync";
                     devices = [ "desktop" "a50" "e22" ];
                 };
+            };
+            gui = {
+                user = "lauhkz";
+                password = "Detonator Change Moneybags Chokehold Operate Precinct Runny Charter";
             };
         };
     };
