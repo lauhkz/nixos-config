@@ -135,11 +135,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1715265974,
-        "narHash": "sha256-gC+HPHotRDXnlosXruN+n8+WkLnJBwABZs85ijNt1w4=",
+        "lastModified": 1715266653,
+        "narHash": "sha256-LECEUbXtyw2II8t8uEOzGSZo2qRDf8wz6vPJCqIp0XI=",
         "owner": "lautar0pp",
         "repo": "nvim-flake",
-        "rev": "15031699d3be770ffb7a1308c120b850a03ddc5f",
+        "rev": "08fdc28637363e7c89b71f596b8031dc928e9307",
         "type": "github"
       },
       "original": {
