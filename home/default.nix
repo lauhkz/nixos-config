@@ -58,7 +58,6 @@
     lazygit
     ranger
     keepassxc
-    librewolf
 
     # system tools
     lm_sensors # for `sensors` command
