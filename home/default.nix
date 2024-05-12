@@ -66,6 +66,7 @@
     usbutils # lsusb
 
     nicotine-plus
+    anki-bin
   ];
 
   stateVersion = "23.05";

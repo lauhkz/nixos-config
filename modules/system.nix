@@ -76,7 +76,7 @@
     environment = {
         shells = with pkgs; [ zsh ];
         systemPackages = with pkgs; [
-            ripgrep
+                ripgrep
                 vim
                 lm_sensors
                 xorg.xprop
