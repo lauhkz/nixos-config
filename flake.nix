@@ -12,20 +12,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    doom-emacs = {
-      url = "github:doomemacs/doomemacs";
-      flake = false;
-    };
+    #doom-emacs = {
+      #url = "github:doomemacs/doomemacs";
+      #flake = false;
+    #};
 
-    neovim = {
-     url = "github:lautar0pp/nvim-flake";
-    };
+    #neovim = {
+     #url = "github:lautar0pp/nvim-flake";
+    #};
 
-    nurpkgs = {
-     url = "github:nix-community/NUR";
-    };
+    #nurpkgs = {
+     #url = "github:nix-community/NUR";
+    #};
  };
-  outputs = { self, nixpkgs, home-manager, emacs-overlay, neovim, nurpkgs, ... } @ inputs: let
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
    inherit (self) outputs;
     vars = {
       user = "lauhkz";

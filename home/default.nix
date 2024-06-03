@@ -5,7 +5,7 @@
    ./i3
    ./programs
    ./rofi
-   ./emacs
+   ./editors/nvim/default.nix
   ];
 
  programs = {
@@ -17,11 +17,6 @@
     shellAliases = {
      ns = "sudo nixos-rebuild switch --flake ~/nixos-config/.#desktop";
     };
-   };
-   git = {
-    enable = true;
-    userName = "lautar0pp";
-    userEmail = "lautaro_RL@outlook.com";
    };
  };
   # TODO please change the username & home direcotry to your own
