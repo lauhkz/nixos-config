@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/windowManager/i3.nix
     ];
 
  nixpkgs.overlays = [ inputs.nvim-flake.overlays.default ];
@@ -28,7 +29,7 @@
    networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Enable the X11 windowing system.
-   services.xserver.displayManager.gdm.enable = true;
-   services.xserver.desktopManager.gnome.enable = true;
+   #services.xserver.displayManager.gdm.enable = true;
+   #services.xserver.desktopManager.gnome.enable = true;
 }
 
