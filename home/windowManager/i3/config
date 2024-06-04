@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -193,5 +193,5 @@ for_window [class="Alacritty"] move to workspace $ws3
 for_window [class="Slack"] move to workspace $ws9
 
 exec --no-startup-id xautolock -corners -000 -time 10 -locker 'i3lock -c 000000' &
-bindsym $mod+Pause exec i3lock -c 000000 && systemctl suspend
-bindsym Pause exec i3lock -c 000000
+bindsym $mod+Home exec i3lock -c 000000 && systemctl suspend
+bindsym Home exec i3lock -c 000000

@@ -24,7 +24,7 @@
             enable = true;
             xkb = {
                 layout = "us";
-                options  = "ctrl:ctrl_modifier";
+                options  = "ctrl:ctrl_swaps";
             };
         };
         openssh = {
@@ -45,7 +45,7 @@
    };
 
   # List packages installed in system profile.
-   environment = { 
+   environment = {
        variables = {
 	 EDITOR = "nvim";
 	 VISUAL = "emacsclient";
@@ -57,6 +57,9 @@
      firefox
      keepassxc
      wezterm
+     feh
+
+     xorg.xmodmap
       ];
    };
 
@@ -74,7 +77,7 @@
   programs.dconf.enable = true;
 
   nixpkgs.config.allowUnfree = true;
-   
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

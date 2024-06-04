@@ -30,6 +30,7 @@
 	arandr
 	xbindkeys
 	sysstat
+    rofi
      ];
     };
    };
