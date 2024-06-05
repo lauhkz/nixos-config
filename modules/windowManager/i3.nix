@@ -31,6 +31,7 @@
 	xbindkeys
 	sysstat
     rofi
+    networkmanagerapplet
      ];
     };
    };

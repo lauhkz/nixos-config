@@ -4,6 +4,7 @@
     imports = [
      ./browser/default.nix
      ./windowManager/i3/default.nix
+     ./programs/tmux/default.nix
     ];
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -88,6 +89,8 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+    alejandra # Nixos formatter
   ];
 
 
@@ -146,7 +149,8 @@
     # set some aliases, feel free to add more or remove some
     shellAliases = {
 	dot = "cd ~/x280";
-    	ns = "sudo nixos-rebuild switch --flake .#x280";
+    ns = "sudo nixos-rebuild switch --flake .#x280";
+    t = "tmux";
     };
   };
 

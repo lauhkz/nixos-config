@@ -24,7 +24,7 @@
             enable = true;
             xkb = {
                 layout = "us";
-                options  = "ctrl:ctrl_swaps";
+                options  = "ctrl:swapcaps";
             };
         };
         openssh = {
@@ -51,6 +51,7 @@
 	 VISUAL = "emacsclient";
        };
        systemPackages = with pkgs; [
+    xclip
      git
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
