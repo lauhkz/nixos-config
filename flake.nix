@@ -76,8 +76,8 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-        { nixpkgs.overlays = [nvim-flake.overlay.default]; }
-          ./nixos/configuration.nix
+        { nixpkgs.overlays = [nvim-flake.overlays.default]; }
+          ./hosts/x280/configuration.nix
         ];
       };
     };
