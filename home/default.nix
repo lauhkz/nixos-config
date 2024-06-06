@@ -1,23 +1,30 @@
-{ config, pkgs, ... }:
-
 {
-    imports = [
-     ./browser/default.nix
-     ./windowManager/i3/default.nix
-     ./programs/tmux/default.nix
-     ./programs/fzf/default.nix
-    ];
+  inputs,
+  lib,
+  pkgs,
+  config,
+  outputs,
+  ...
+}: {
+  imports =
+    [
+      ./browser/default.nix
+      ./windowManager/i3/default.nix
+      ./programs/tmux/default.nix
+      ./programs/fzf/default.nix
+    ]
+    ++ (builtins.attrValues outputs.homeManagerModules);
 
   # Wezterm config file
   xdg.configFile = {
-      "wezterm/wezterm.lua" = {
-  	source = ./terminal/wezterm/wezterm.lua;
-	recursive = true;
-	};
+    "wezterm/wezterm.lua" = {
+      source = ./terminal/wezterm/wezterm.lua;
+      recursive = true;
+    };
   };
 
-  home.username = "lz";
-  home.homeDirectory = "/home/lz";
+  home.homeDirectory = "/home/l@z";
+  home.username = "l@z";
 
   home.stateVersion = "23.11";
 

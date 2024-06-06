@@ -73,12 +73,14 @@
     nixosConfigurations = {
       # FIXME replace with your hostname
       x280 = lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-        { nixpkgs.overlays = [nvim-flake.overlays.default]; }
+          {nixpkgs.overlays = [nvim-flake.overlays.default];}
           ./hosts/x280/configuration.nix
         ];
+        specialArgs = {
+          inherit inputs outputs;
+        };
       };
     };
 
@@ -86,14 +88,15 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       # FIXME replace with your username@hostname
-      "lz@x280" = lib.homeManagerConfiguration {
+      "l@z@x280" = lib.homeManagerConfiguration {
         pkgs = pkgsFor.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          # > Our main home-manager configuration file <
-          { nixpkgs.overlays = [ nur.overlay ]; }
-          ./home/home.nix
+          # {nixpkgs.overlays = [nur.overlay];}
+          ./home/home.nix # > Our main home-manager configuration file <
         ];
+        extraSpecialArgs = {
+          inherit inputs outputs;
+        };
       };
     };
   };

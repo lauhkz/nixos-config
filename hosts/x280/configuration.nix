@@ -56,9 +56,10 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users."lz" = {
+  users.users."l@z" = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager" "adbusers"]; # Enable ‘sudo’ for the user.
+    useDefaultShell = true;
   };
 
   # List packages installed in system profile.
