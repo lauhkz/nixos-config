@@ -98,6 +98,7 @@
     extraConfig = {
 	init.defaultBranch = "main";
     http.version = "HTTP/1.1";
+    safe.directory = "/home/l@z/sync/Code/nix-stuff/nixos-config";
     };
   };
 
