@@ -5,7 +5,6 @@
     tmux = {
      enable = true;
      baseIndex = 1;
-     clock24 = true;
      escapeTime = 0;
      keyMode = "vi";
      newSession = true;
@@ -19,6 +18,9 @@
        set -g status-position top
        set -g status-interval 1
        set -g status-left ""
+
+       set-option -g automatic-rename on
+       set-option -g automatic-rename-format '#{b:pane_current_path}'
 
        bind -T copy-mode-vi v send-keys -X begin-selection
        bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'

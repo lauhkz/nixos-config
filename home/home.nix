@@ -109,6 +109,7 @@
     userEmail = "lautaro_RL@outlook.com";
     extraConfig = {
 	init.defaultBranch = "main";
+    http.version = "HTTP/1.1";
     };
   };
 

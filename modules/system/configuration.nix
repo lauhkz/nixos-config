@@ -61,6 +61,7 @@
      feh
 
      xorg.xmodmap
+     pavucontrol
       ];
    };
 
