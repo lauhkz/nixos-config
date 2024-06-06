@@ -1,4 +1,3 @@
-
   {
   description = "A simple NixOS flake";
 
@@ -13,10 +12,10 @@
 	inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #firefox-addons = {
-	#url = "github:nix-community/NUR";
-	#inputs.nixpkgs.follows = "nixpkgs";
-    #};
+	#    firefox-addons = {
+	# url = "github:nix-community/NUR";
+	# inputs.nixpkgs.follows = "nixpkgs";
+	#    };
 
     nvim-flake = {
     url = "github:lautar0pp/nvim-flake";
