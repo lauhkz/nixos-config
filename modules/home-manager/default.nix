@@ -1,12 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-    imports = [
-     ./browser/default.nix
-     ./windowManager/i3/default.nix
-     ./programs/tmux/default.nix
-     ./programs/fzf/default.nix
-    ];
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
 
@@ -95,13 +89,6 @@
   ];
 
 
-  # Wezterm config file
-  xdg.configFile = {
-      "wezterm/wezterm.lua" = {
-  	source = ./terminal/wezterm/wezterm.lua;
-	recursive = true;
-	};
-  };
 
   # basic configuration of git, please change to your own
   programs.git = {

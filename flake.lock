@@ -157,6 +157,21 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1717678434,
+        "narHash": "sha256-FtS08HwGJrIW5J0+Tdth5MjXDKhBncTvbeO0yS1vqzY=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "9d640916ffb1680888b9898d2a26da9715648f60",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "nvim-flake": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -182,7 +197,9 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
-        "nvim-flake": "nvim-flake"
+        "nur": "nur",
+        "nvim-flake": "nvim-flake",
+        "systems": "systems_2"
       }
     },
     "systems": {
@@ -197,6 +214,21 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
+      "locked": {
+        "lastModified": 1689347949,
+        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default-linux",
         "type": "github"
       }
     }

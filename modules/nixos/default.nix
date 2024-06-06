@@ -5,6 +5,17 @@
 { config, lib, pkgs, ... }:
 
 {
+  boot.loader = {
+       systemd-boot.enable = true;
+       efi = {
+         canTouchEfiVariables = true;
+       };
+       grub = {
+	  efiSupport = true;
+	  devices = "nodev";
+       };
+  };
+
    networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
@@ -39,7 +50,7 @@
     };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users."l@z" = {
+   users.users."lz" = {
      isNormalUser = true;
      extraGroups = [ "wheel" "networkmanager" "adbusers"]; # Enable ‘sudo’ for the user.
    };
@@ -98,7 +109,7 @@
     nix = {                                   # Nix Package Manager settings
         settings ={
             auto-optimise-store = true;           # Optimise syslinks
-	    allowed-users = [ "l@z" ];
+	    allowed-users = [ "lz" ];
         };
 
         gc = {                                  # Automatic garbage collection
