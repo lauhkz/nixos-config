@@ -17,16 +17,20 @@
   # Bootloader.
   boot = {
     loader = {
+      efi = {
+	canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
       grub = {
-        enable = true;
-        device = "/dev/sda";
+        efiSupport = true;
+        device = "nodev";
       };
       timeout = 1;
     };
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
-  networking.hostName = "desktop"; # Define your hostname.
+  networking.hostName = "x280"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;

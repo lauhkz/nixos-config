@@ -1,11 +1,18 @@
-{ pkgs , ... }:
-
+{ pkgs , vars, ... }:
+let
+    vars = {
+      user = "lz";
+      location = "$HOME/nixos-config";
+      terminal = "alacritty";
+      editor = "nvim";
+    };
+  in
 {
   imports = [
    ./i3
    ./programs
    ./rofi
-   ./editors/nvim/default.nix
+   #./editors/nvim/default.nix
   ];
 
  programs = {
@@ -21,8 +28,8 @@
  };
   # TODO please change the username & home direcotry to your own
   home = {
-   username = "lauhkz";
-   homeDirectory = "/home/lauhkz";
+   username = "lz";
+   homeDirectory = "/home/lz";
    packages = with pkgs; [
     alacritty
     neofetch

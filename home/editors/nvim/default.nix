@@ -20,7 +20,7 @@ in
             withNodeJs = true;
             plugins = with pkgs.vimPlugins; [
                 nvim-treesitter.withAllGrammars
-                nvim-lspconfig;
+                nvim-lspconfig
 
                 trouble
                 plenary-nvim

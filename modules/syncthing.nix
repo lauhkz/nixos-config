@@ -1,12 +1,20 @@
-{ pkgs, ... }:
+{ pkgs, vars, ... }:
 
+let
+    vars = {
+      user = "lz";
+      location = "$HOME/nixos-config";
+      terminal = "alacritty";
+      editor = "nvim";
+    };
+  in
 {
     services.syncthing = {
         enable = true;
-        dataDir = "/home/lauhkz";
+        dataDir = "/home/lz";
         openDefaultPorts = true;
-        configDir = "/home/lauhkz/.config/syncthing";
-        user = "lauhkz";
+        configDir = "/home/lz/.config/syncthing";
+        user = "lz";
         group = "users";
         guiAddress = "0.0.0.0:8384";
         overrideDevices = true;
@@ -19,20 +27,20 @@
             };
             folders = {
                 "sync" = {
-                    path = "/home/lauhkz/sync";
+                    path = "/home/lz/sync";
                     devices = [ "desktop" ];
                 };
                 "org" = {
-                    path = "/home/lauhkz/sync/2.Areas/Org";
+                    path = "/home/lz/sync/2.Areas/Org";
                     devices = [ "desktop" "a50" "e22" ];
                     };
                 "resources" = {
-                    path = "/home/lauhkz/sync/3.Resources";
+                    path = "/home/lz/sync/3.Resources";
                     devices = [ "desktop" "a50" "e22" ];
                     };
             };
             gui = {
-                user = "lauhkz";
+                user = "lz";
                 password = "Detonator Change Moneybags Chokehold Operate Precinct Runny Charter";
             };
         };

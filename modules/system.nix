@@ -1,10 +1,15 @@
-{ config, pkgs, inputs, neovim,  ... }:
+{ config, pkgs, inputs, vars,  ... }:
 
+let
+    vars = {
+      user = "lz";
+      location = "$HOME/nixos-config";
+      terminal = "alacritty";
+      editor = "nvim";
+    };
+  in
 {
 
-    nixpkgs.overlays = [
-        inputs.neovim.overlays.default
-    ];
 
 # Set your time zone.
     time.timeZone = "America/Argentina/Buenos_Aires";
@@ -88,7 +93,6 @@
 
                 nodejs
 
-                nvim-pkg
         ];
         variables = {
             EDITOR = "nvim";
@@ -122,11 +126,14 @@
         };
     };
 
-    users.users.lauhkz = {
+    users.users.lz = {
         isNormalUser = true;
-        description = "lauhkz";
+        description = "lz";
         extraGroups = [ "networkmanager" "wheel" "adbusers" ];
         shell = pkgs.zsh;
+        openssh.authorizedKeys.keys = [
+	  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM70EDv7Fz8kJqArDBgBBfCf0pvPfdsYlUJRDoOxKC1f lauhkz@x201"
+        ];
     };
 
     nix = {                                   # Nix Package Manager settings

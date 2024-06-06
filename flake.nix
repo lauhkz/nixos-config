@@ -28,7 +28,7 @@
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
    inherit (self) outputs;
     vars = {
-      user = "lauhkz";
+      user = "lz";
       location = "$HOME/nixos-config";
       terminal = "alacritty";
       editor = "nvim";
@@ -42,7 +42,7 @@
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs vars;};
         modules = [
 
           ./hosts/desktop/default.nix
@@ -54,8 +54,8 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.extraSpecialArgs = inputs ;
-            home-manager.users.lauhkz = import ./home/default.nix;
+            home-manager.extraSpecialArgs = inputs;
+            home-manager.users.lz = import ./home/default.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
